@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 from typer.testing import CliRunner
 
-from film_tracks_aligner import cli
-from film_tracks_aligner.models import Track, TrackSelection
+from frankenstein import cli
+from frankenstein.models import Track, TrackSelection
 
 
 class DirectoryModeTests(unittest.TestCase):
@@ -53,8 +53,8 @@ class DirectoryModeTests(unittest.TestCase):
                 captured["pipeline_selection"] = selected
                 captured["pipeline_output"] = output
 
-            with patch("film_tracks_aligner.cli.FilmAlignerApp", FakeApp), patch(
-                "film_tracks_aligner.cli._run_pipeline", fake_run_pipeline
+            with patch("frankenstein.cli.FilmAlignerApp", FakeApp), patch(
+                "frankenstein.cli._run_pipeline", fake_run_pipeline
             ):
                 result = self.runner.invoke(cli.app, [])
 
@@ -96,8 +96,8 @@ class DirectoryModeTests(unittest.TestCase):
             ) -> None:
                 captured["pipeline_output"] = output
 
-            with patch("film_tracks_aligner.cli.FilmAlignerApp", FakeApp), patch(
-                "film_tracks_aligner.cli._run_pipeline", fake_run_pipeline
+            with patch("frankenstein.cli.FilmAlignerApp", FakeApp), patch(
+                "frankenstein.cli._run_pipeline", fake_run_pipeline
             ):
                 result = self.runner.invoke(cli.app, [str(file1), str(file2)])
 

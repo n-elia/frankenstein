@@ -4,8 +4,8 @@ import unittest
 
 import numpy as np
 
-from film_tracks_aligner.mkv.muxer import _build_linear_sync
-from film_tracks_aligner.sync.aligner import (
+from frankenstein.mkv.muxer import _build_linear_sync
+from frankenstein.sync.aligner import (
     _global_xcorr_chroma,
     _linear_drift_fallback,
     _make_linear_warp,

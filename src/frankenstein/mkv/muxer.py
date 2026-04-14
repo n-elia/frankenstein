@@ -3,7 +3,7 @@ from __future__ import annotations
 import subprocess
 from pathlib import Path
 
-from film_tracks_aligner.models import TrackSelection, WarpMap
+from frankenstein.models import TrackSelection, WarpMap
 
 
 def mux_output(

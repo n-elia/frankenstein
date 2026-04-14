@@ -63,7 +63,7 @@ The generated fixture is cached under `tests/fixtures/movies/` and excluded from
 
 ```bash
 # All tests (MKV fixture is auto-generated on first run)
-uv run python -m unittest discover tests -v
+uv run --group dev pytest tests -v
 ```
 
 27 tests, all passing. No tests are skipped when `ffmpeg` with `libx264` is available.

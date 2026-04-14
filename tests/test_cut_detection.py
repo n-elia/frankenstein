@@ -8,12 +8,12 @@ from pathlib import Path
 from unittest.mock import patch
 
 from audio_harness import MOVIE_FIXTURE, ensure_movie_fixture
-from film_tracks_aligner.sync.aligner import (
+from frankenstein.sync.aligner import (
     _anchors_to_warp_map,
     _build_cut_warp_from_edge_offsets,
     compute_warp_map,
 )
-from film_tracks_aligner.sync.analyzer import extract_features
+from frankenstein.sync.analyzer import extract_features
 
 
 class CutDetectionUnitTests(unittest.TestCase):
@@ -124,10 +124,10 @@ class FixtureCutDetectionTests(unittest.TestCase):
             chroma_ref, onset_ref, ref_dur = extract_features(reference_wav)
             chroma_sel, onset_sel, sel_dur = extract_features(selected_wav)
 
-            with patch("film_tracks_aligner.sync.aligner._CHUNK_SEC", 15.0), patch(
-                "film_tracks_aligner.sync.aligner._STEP_SEC", 5.0
-            ), patch("film_tracks_aligner.sync.aligner._SEARCH_SEC", 12.0), patch(
-                "film_tracks_aligner.sync.aligner._MIN_SEGMENT_SEC", 5.0
+            with patch("frankenstein.sync.aligner._CHUNK_SEC", 15.0), patch(
+                "frankenstein.sync.aligner._STEP_SEC", 5.0
+            ), patch("frankenstein.sync.aligner._SEARCH_SEC", 12.0), patch(
+                "frankenstein.sync.aligner._MIN_SEGMENT_SEC", 5.0
             ):
                 warp_map, _ = compute_warp_map(
                     chroma_ref,

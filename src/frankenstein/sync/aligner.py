@@ -5,8 +5,8 @@ from typing import Callable
 import numpy as np
 from scipy.signal import correlate, correlation_lags
 
-from film_tracks_aligner.models import WarpMap, WarpSegment
-from film_tracks_aligner.sync.analyzer import SEC_PER_FRAME
+from frankenstein.models import WarpMap, WarpSegment
+from frankenstein.sync.analyzer import SEC_PER_FRAME
 
 # ---------------------------------------------------------------------------
 # Tuning parameters

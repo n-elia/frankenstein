@@ -7,8 +7,8 @@ from pathlib import Path
 import soundfile as sf
 
 from audio_harness import dominant_frequency, make_pcm_track, write_tone_sequence
-from film_tracks_aligner.models import WarpMap, WarpSegment
-from film_tracks_aligner.sync.applier import _build_audio_pieces, _can_use_lossless_sync, apply_warp
+from frankenstein.models import WarpMap, WarpSegment
+from frankenstein.sync.applier import _build_audio_pieces, _can_use_lossless_sync, apply_warp
 
 
 class GapFillTests(unittest.TestCase):

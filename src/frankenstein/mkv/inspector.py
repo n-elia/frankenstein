@@ -4,7 +4,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from film_tracks_aligner.models import Track
+from frankenstein.models import Track
 
 _SUBTITLE_FORMAT_MAP = {
     "subrip": "srt",

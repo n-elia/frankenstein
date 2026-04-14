@@ -7,7 +7,7 @@ from textual.binding import Binding
 from textual.screen import Screen
 from textual.widgets import Footer, Header, Label, ListItem, ListView, Static
 
-from film_tracks_aligner.models import Track
+from frankenstein.models import Track
 
 
 class TrackItem(ListItem):

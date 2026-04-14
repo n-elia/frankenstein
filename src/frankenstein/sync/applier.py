@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
 
-from film_tracks_aligner.models import Track, WarpMap, WarpSegment
+from frankenstein.models import Track, WarpMap, WarpSegment
 
 
 # Codecs that ffmpeg can encode (used for re-encode fallback matching)

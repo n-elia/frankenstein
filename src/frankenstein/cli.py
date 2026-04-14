@@ -10,17 +10,17 @@ from rich.live import Live
 from rich.markup import escape
 from rich.panel import Panel
 
-from film_tracks_aligner.mkv.extractor import (
+from frankenstein.mkv.extractor import (
     extract_audio_as_wav,
     extract_subtitle,
 )
-from film_tracks_aligner.mkv.muxer import mux_output
-from film_tracks_aligner.models import TrackSelection, WarpMap
-from film_tracks_aligner.subtitle.adjuster import adjust_subtitle
-from film_tracks_aligner.sync.aligner import MIN_CONFIDENCE, compute_warp_map
-from film_tracks_aligner.sync.analyzer import extract_features
-from film_tracks_aligner.sync.applier import apply_warp
-from film_tracks_aligner.tui.app import FilmAlignerApp
+from frankenstein.mkv.muxer import mux_output
+from frankenstein.models import TrackSelection, WarpMap
+from frankenstein.subtitle.adjuster import adjust_subtitle
+from frankenstein.sync.aligner import MIN_CONFIDENCE, compute_warp_map
+from frankenstein.sync.analyzer import extract_features
+from frankenstein.sync.applier import apply_warp
+from frankenstein.tui.app import FilmAlignerApp
 
 app = typer.Typer(
     name="frankensync",

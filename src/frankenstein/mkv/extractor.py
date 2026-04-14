@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 
-from film_tracks_aligner.models import Track
+from frankenstein.models import Track
 
 
 def extract_audio_as_wav(track: Track, output_path: Path, sample_rate: int = 16000) -> Path:

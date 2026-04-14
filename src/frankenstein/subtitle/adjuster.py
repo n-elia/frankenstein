@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 from scipy.interpolate import interp1d
 
-from film_tracks_aligner.models import Track, WarpMap
+from frankenstein.models import Track, WarpMap
 
 
 def adjust_subtitle(

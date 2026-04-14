@@ -4,8 +4,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from film_tracks_aligner.models import Track, WarpMap, WarpSegment
-from film_tracks_aligner.subtitle.adjuster import (
+from frankenstein.models import Track, WarpMap, WarpSegment
+from frankenstein.subtitle.adjuster import (
     _constant_subtitle_delay_ms,
     adjust_subtitle,
 )

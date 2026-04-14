@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 import soundfile as sf
 
-from film_tracks_aligner.models import Track
+from frankenstein.models import Track
 
 
 def write_tone_sequence(

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from film_tracks_aligner.cli import _format_confidence_message
+from frankenstein.cli import _format_confidence_message
 
 
 class ConfidenceMessageTests(unittest.TestCase):

@@ -6,14 +6,14 @@ from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.widgets import Footer, Header
 
-from film_tracks_aligner.mkv.inspector import (
+from frankenstein.mkv.inspector import (
     get_reference_audio,
     get_tracks_by_type,
     inspect_file,
 )
-from film_tracks_aligner.models import Track, TrackSelection
-from film_tracks_aligner.tui.screens.theme_select import ThemeSelectScreen
-from film_tracks_aligner.tui.screens.track_select import TrackSelectScreen
+from frankenstein.models import Track, TrackSelection
+from frankenstein.tui.screens.theme_select import ThemeSelectScreen
+from frankenstein.tui.screens.track_select import TrackSelectScreen
 
 
 class FilmAlignerApp(App[TrackSelection | None]):

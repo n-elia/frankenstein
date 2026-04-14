@@ -7,8 +7,8 @@ from unittest.mock import patch
 
 import numpy as np
 
-from film_tracks_aligner.cli import _run_pipeline
-from film_tracks_aligner.models import Track, TrackSelection, WarpMap, WarpSegment
+from frankenstein.cli import _run_pipeline
+from frankenstein.models import Track, TrackSelection, WarpMap, WarpSegment
 
 
 class _FakeAlignmentDisplay:
@@ -41,20 +41,20 @@ class PathSelectionTests(unittest.TestCase):
             tmp = Path(tmpdir)
             output = tmp / "output.mkv"
 
-            with patch("film_tracks_aligner.cli.extract_audio_as_wav"), patch(
-                "film_tracks_aligner.cli.extract_features",
+            with patch("frankenstein.cli.extract_audio_as_wav"), patch(
+                "frankenstein.cli.extract_features",
                 side_effect=[
                     (np.zeros((12, 8)), np.zeros(8), 10.0),
                     (np.zeros((12, 8)), np.zeros(8), 10.0),
                 ],
             ), patch(
-                "film_tracks_aligner.cli.compute_warp_map", return_value=(warp_map, 0.9)
+                "frankenstein.cli.compute_warp_map", return_value=(warp_map, 0.9)
             ), patch(
-                "film_tracks_aligner.cli.apply_warp", return_value=None
+                "frankenstein.cli.apply_warp", return_value=None
             ) as apply_warp_mock, patch(
-                "film_tracks_aligner.cli.mux_output"
+                "frankenstein.cli.mux_output"
             ) as mux_output_mock, patch(
-                "film_tracks_aligner.cli.AlignmentDisplay", _FakeAlignmentDisplay
+                "frankenstein.cli.AlignmentDisplay", _FakeAlignmentDisplay
             ):
                 _run_pipeline(selection, tmp, output)
 
@@ -75,20 +75,20 @@ class PathSelectionTests(unittest.TestCase):
             tmp = Path(tmpdir)
             output = tmp / "output.mkv"
 
-            with patch("film_tracks_aligner.cli.extract_audio_as_wav"), patch(
-                "film_tracks_aligner.cli.extract_features",
+            with patch("frankenstein.cli.extract_audio_as_wav"), patch(
+                "frankenstein.cli.extract_features",
                 side_effect=[
                     (np.zeros((12, 8)), np.zeros(8), 10.0),
                     (np.zeros((12, 8)), np.zeros(8), 12.0),
                 ],
             ), patch(
-                "film_tracks_aligner.cli.compute_warp_map", return_value=(warp_map, 0.9)
+                "frankenstein.cli.compute_warp_map", return_value=(warp_map, 0.9)
             ), patch(
-                "film_tracks_aligner.cli.apply_warp", return_value=rendered
+                "frankenstein.cli.apply_warp", return_value=rendered
             ) as apply_warp_mock, patch(
-                "film_tracks_aligner.cli.mux_output"
+                "frankenstein.cli.mux_output"
             ) as mux_output_mock, patch(
-                "film_tracks_aligner.cli.AlignmentDisplay", _FakeAlignmentDisplay
+                "frankenstein.cli.AlignmentDisplay", _FakeAlignmentDisplay
             ):
                 _run_pipeline(selection, tmp, output)
 

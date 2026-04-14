@@ -11,7 +11,7 @@ uv sync
 ## Running tests
 
 ```bash
-uv run python -m unittest discover tests -v
+uv run --group dev pytest tests -v
 ```
 
 Some tests generate a synthetic MKV fixture on first run (requires `ffmpeg` with `libx264`). The fixture is cached under `tests/fixtures/movies/` and excluded from version control. See [test-strategy.md](test-strategy.md) for the full test architecture and file inventory.
@@ -19,7 +19,7 @@ Some tests generate a synthetic MKV fixture on first run (requires `ffmpeg` with
 ## Project structure
 
 ```
-src/film_tracks_aligner/
+src/frankenstein/
 ├── cli.py              # Typer entry point & pipeline orchestration
 ├── models.py           # Track, TrackSelection, WarpMap dataclasses
 ├── mkv/
