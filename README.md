@@ -77,6 +77,24 @@ From a local checkout, prefix with `uv run`:
 uv run frankensync movie_hq.mkv movie_lang.mkv -o movie_final.mkv
 ```
 
+## Screenshots
+
+<p align="center">
+  <img src="assets/tui_video_select.svg" alt="Video track selection" width="700"/><br/>
+  <em>Step 1 — Select the video track</em>
+</p>
+
+<p align="center">
+  <img src="assets/tui_audio_select.svg" alt="Audio track selection" width="700"/><br/>
+  <em>Step 2 — Select the audio track</em>
+</p>
+
+<p align="center">
+  <img src="assets/tui_subtitle_select.svg" alt="Subtitle track selection" width="700"/><br/>
+  <em>Step 3 — Select the subtitle track (optional)</em>
+</p>
+
+
 ## Features
 
 - **Interactive TUI** ([Textual](https://textual.textualize.io/)) to pick video, audio, and subtitle tracks across both source files
