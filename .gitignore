@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+*.pyd
+build/
+dist/
+wheels/
+*.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+
+# Editor / local environment
+.idea/
+.DS_Store
+
+# Generated outputs
+*_merged.mkv
+*.mkv
+
+# Local media fixtures
+tests/fixtures/movies/*.mkv
+
+# UV
+uv.lock
