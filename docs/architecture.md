@@ -9,7 +9,7 @@
 - another file has the **preferred audio and/or subtitles**
 - the tracks are **not directly mux-compatible in time**
 
-The application's goal is to produce a new MKV that keeps the chosen video stream and aligns the chosen audio/subtitle streams onto that video's timeline.
+The application's goal is to produce a new MKV that keeps the chosen video stream and aligns the chosen audio/subtitle streams onto that video's timeline. **The video track is the master**: its timeline is the reference that all other tracks are warped to match.
 
 ### Core goals
 
@@ -110,9 +110,11 @@ The main code is organized by responsibility:
 
 The central abstraction is the **warp map**.
 
+The **video track is the master timeline**. The "reference audio" is the first audio track from the video source file — it provides the timing baseline that the warp map is computed against. Everything in the system (selected audio, subtitles) is aligned to this reference.
+
 Each `WarpSegment` expresses a mapping between:
 
-- a region of the **reference timeline**
+- a region of the **reference timeline** (= the video/master timeline)
 - a region of the **selected audio timeline**
 
 Conceptually:
@@ -123,7 +125,7 @@ t_sel = slope * t_ref + intercept
 
 where:
 
-- `t_ref` is time on the chosen video/reference timeline
+- `t_ref` is time on the master (video) timeline
 - `t_sel` is time on the chosen audio timeline
 
 This model is useful because it supports both:
@@ -368,9 +370,9 @@ Useful next improvements would include:
 
 Its design priorities are:
 
-- keep the chosen video untouched
+- keep the chosen video untouched — it is the master track and defines the reference timeline
 - infer a practical timing model between releases
 - use the lightest safe correction path available
-- preserve the reference timeline when cuts or censored gaps are involved
+- preserve the master (video) timeline when cuts or censored gaps are involved
 
 That trade-off keeps the tool usable on real files while leaving room to improve the hardest part: robust automatic cut detection.
