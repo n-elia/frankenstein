@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT License"/></a>
-  <img src="https://img.shields.io/badge/python-%E2%89%A53.11-blue.svg" alt="Python 3.11+"/>
+  <img src="https://img.shields.io/badge/python-%E2%89%A53.14-blue.svg" alt="Python 3.14+"/>
   <img src="https://img.shields.io/badge/requires-ffmpeg%20%7C%20mkvtoolnix-orange.svg" alt="ffmpeg | mkvtoolnix"/>
 </p>
 
@@ -42,7 +42,7 @@ brew install ffmpeg mkvtoolnix
 
 ### Install frankensync
 
-Requires Python >= 3.11 and [uv](https://github.com/astral-sh/uv):
+Requires Python >= 3.14 and [uv >= 0.11.6](https://github.com/astral-sh/uv):
 
 ```bash
 uv tool install git+https://github.com/n-elia/frankenstein
